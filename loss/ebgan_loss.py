@@ -11,7 +11,7 @@ class EBGANLoss:
 		z_mse_loss = util.mes_loss(generate_images, decode_generate_images)
 		z_pullaway_loss = util.pullaway_loss(generate_images_embeddings)
 
-		discriminator_loss = real_mse_loss + _MARGIN_ - z_mse_loss
-		# generator_loss = z_mse_loss + _PULLAWAY_WEIGHT_ * z_pullaway_loss
-		generator_loss = z_mse_loss
+		discriminator_loss = real_mse_loss + tf.maximum(0, _MARGIN_ - z_mse_loss)
+		generator_loss = z_mse_loss + _PULLAWAY_WEIGHT_ * z_pullaway_loss
+		# generator_loss = z_mse_loss
 		return discriminator_loss, generator_loss
