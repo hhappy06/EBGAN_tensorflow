@@ -3,4 +3,4 @@ My practice about EBGAN ([ENERGY-BASED GENERATIVE ADVERSARIAL NETWORK](https://a
 
 ##Use
 > run 'python mnist_process.py' to create mnist samples<br>
-> run 'python train_aae.py' to train the AAE network<br>
+> run 'python train_ebgan.py' to train the EBGAN network<br>
